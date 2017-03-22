@@ -1,0 +1,95 @@
+@import '_colors.sass'
+@import '_dimensions.sass'
+@import '_mixins.sass'
+@import '_trigonometry.scss'
+
+@import 'arrows.sass'
+
+
+.watch_default
+	position: relative
+
+	display: block
+	margin: 0
+	padding: 0
+	height: $default_radius
+	width: $default_radius
+	border-width: $border_width
+	border-style: solid
+	border-radius: 50%
+
+	background-color: $background
+	border-color: $black
+
+
+	.watch__line-label
+		position: absolute
+		top: 10px
+		left: calc(50% - #{$label_width})
+
+		display: block
+		width: $label_width
+		height: $label_height
+
+		background-color: $black
+
+		transform-origin: 50% calc(#{$default_radius} / 2 - 10px)
+
+
+
+	.watch__line-label_bold
+		position: absolute
+		top: 10px
+		left: calc(50% - #{$bold_label_width} / 2)
+
+		display: block
+		width: $bold_label_width
+		height: $bold_label_height
+
+		background-color: $black
+
+		transform-origin: 50% calc(#{$default_radius} / 2 - 10px)
+
+	
+		
+	.watch__numeric-label
+		position: absolute
+
+		display: block
+		width: $numeric_label_width
+		height: $numeric_label_height
+
+		text-align: center
+		font-size: $numeric_label_height
+
+
+
+	@for $i from 1 through 12
+	  .watch__line-label_bold:nth-of-type(#{$i})
+	  	transform: rotate(#{$i * 30}deg)
+
+
+
+	@for $i from 1 through 60
+	  .watch__line-label:nth-of-type(#{$i})
+	  	transform: rotate(#{$i * 6}deg)
+
+
+
+	@for $i from 1 through 12
+		.watch__line-label:nth-of-type(#{$i * 5})
+			display: none
+
+
+
+	@for $i from 1 through 12
+		.watch__numeric-label:nth-of-type(#{$i})::after
+			content: $i + ''
+			font-family: 'Arial', sans-serif;
+
+
+
+	@for $i from 1 through 12
+		.watch__numeric-label:nth-of-type(#{$i})
+			left: calc(#{$default_radius} / 2 - #{$numeric_label_width} / 2 + #{point_on_circle_x($numeric_label_radius / 2, ($i - 3) * 30deg)})
+			top: calc(#{$default_radius} / 2 - #{$numeric_label_height} / 2 + #{point_on_circle_y($numeric_label_radius / 2, ($i - 3) * 30deg)})

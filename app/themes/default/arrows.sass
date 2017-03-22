@@ -1,0 +1,99 @@
+
+
+.watch_default
+	.watch__second-arrow
+		position: absolute
+		left: calc(50% - #{$second_arrow_width} / 2)
+		top: calc(50% - #{$second_arrow_height * 0.9})
+		z-index: 3
+
+		width: $second_arrow_width
+		height: $second_arrow_height
+
+		background-color: $second_arrow_bg
+
+		transform-origin: 50% #{$second_arrow_height * 0.9}
+		transform: rotate(0deg)
+
+		animation: second 60s step-start infinite
+
+
+		&::before
+			position: absolute
+			top: $second_arrow_height
+			left: #{- $second_arrow_width * 0.5}
+
+			display: block
+			width: #{$second_arrow_width * 2}
+			height: #{$second_arrow_height * 0.25}
+
+			background-color: $second_arrow_bg
+
+			content: ''
+
+		&::after
+			position: absolute
+			top: calc(#{$second_arrow_height * 0.9} - #{$second_arrow_width * 2})
+			left: #{- $second_arrow_width * 1.5}
+
+			box-sizing: border-box
+			display: block
+			width: #{$second_arrow_width * 4}
+			height: #{$second_arrow_width * 4}
+			border-radius: 50%
+			border-width: 2px
+			border-style: solid
+
+			background-color: $background
+			border-color: $second_arrow_bg
+
+			content: ''
+
+
+	.watch__minute-arrow
+		position: absolute
+		left: calc(50% - #{$minute_arrow_width} / 2)
+		top: calc(50% - #{$minute_arrow_height * 0.85})
+		z-index: 1
+
+		width: $minute_arrow_width
+		height: $minute_arrow_height
+
+		background-color: $minute_arrow_bg
+
+		transform-origin: 50% #{$minute_arrow_height * 0.85}
+		transform: rotate(0deg)
+
+		animation: minute 3600s linear infinite
+
+
+	.watch__hour-arrow
+		position: absolute
+		left: calc(50% - #{$hour_arrow_width} / 2)
+		top: calc(50% - #{$hour_arrow_height * 0.85})
+		z-index: 2
+
+		width: $hour_arrow_width
+		height: $hour_arrow_height
+
+		background-color: $hour_arrow_bg
+
+		transform-origin: 50% #{$hour_arrow_height * 0.85}
+		transform: rotate(0deg)
+
+		animation: minute 43200s linear infinite
+
+		&::after
+			position: absolute
+			left: #{- $hour_arrow_width}
+			top: calc(#{$hour_arrow_height * 0.85} - #{$hour_arrow_width * 1.5})
+
+			box-sizing: border-box
+			display: block
+			width: #{$hour_arrow_width * 3}
+			height: #{$hour_arrow_width * 3}
+			border-radius: 50%
+
+			background-color: $hour_arrow_bg
+
+			content: ''
