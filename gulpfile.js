@@ -56,8 +56,9 @@ gulp.task('sass-demo', function() {
 
 gulp.task('css', function() {
 	return gulp.src('app/themes/**/*.min.css')
-	.pipe(concatCss('dist/watch.min.css'))
-	.pipe(gulp.dest('./'))
+	.pipe( concatCss('dist/watch.min.css') )
+	.pipe( cssnano() )
+	.pipe( gulp.dest('./') )
 	.pipe( browserSync.reload({stream: true}) );
 });
 
