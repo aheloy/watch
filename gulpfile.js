@@ -17,7 +17,7 @@ gulp.task('browser-sync', function() {
     browserSync({
         server: {
             baseDir: './',
-            index: 'index.html'
+            index: 'demo/index.html'
         },
         notify: true
     });
@@ -88,7 +88,7 @@ gulp.task('watch', [
 	'sass',
 	'js',
 	], function() {
-		gulp.watch('index.html', browserSync.reload);
+		gulp.watch('demo/index.html', browserSync.reload);
 		gulp.watch('app/**/*.sass', ['sass']);
 		gulp.watch('app/**/*.css', ['css']);
 		gulp.watch('app/*.js', ['js']);
