@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Watch demo</title>
+
+	<link rel="stylesheet" href="/dist/watch.min.css">
+	<link rel="stylesheet" href="/demo/demo.min.css">
+</head>
+<body>
+	<div class="watches">
+		<div class="watch-wrapper">
+			<span>Moscow</span>
+			<div class="watch" data-timezone="Europe/Moscow"></div>
+		</div>
+		<div class="watch-wrapper">
+			<span>London</span>
+			<div class="watch" data-timezone="Europe/London"></div>
+		</div>
+		<div class="watch-wrapper">
+			<span>Tokyo</span>
+			<div class="watch" data-timezone="Asia/Tokyo"></div>
+		</div>
+		<div class="watch-wrapper">
+			<span>New York</span>
+			<div class="watch" data-timezone="America/New_York"></div>
+		</div>
+		<div class="watch-wrapper">
+			<span>Sydney</span>
+			<div class="watch" data-timezone="Australia/Sydney"></div>
+		</div>
+		<div class="watch-wrapper">
+			<span>Paris</span>
+			<div class="watch" data-timezone="Europe/Paris"></div>
+		</div>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+	<script src="https://momentjs.com/downloads/moment.min.js"></script>
+	<script src="https://momentjs.com/downloads/moment-timezone-with-data.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+	<script src="/dist/watch.min.js"></script>
+	<script>
+		var wrappers = document.getElementsByClassName('watch');
+		var watches = [];
+		for (var i = 0; wrappers.length; i++) {
+			watches.push( new Watch(wrappers[i], wrappers[i].getAttribute('data-timezone')) );
+		}
+	</script>
+</body>
+</html>

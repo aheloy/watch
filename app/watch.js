@@ -28,6 +28,11 @@
 		this._hourArrow 	= createDiv(this._arrowsWrapper, 'watch__hour-arrow');
 		this._minuteArrow = createDiv(this._arrowsWrapper, 'watch__minute-arrow');
 		this._secondArrow = createDiv(this._arrowsWrapper, 'watch__second-arrow');
+
+		
+
+
+
 	};
 
 	Watch.prototype._createLabels = function() {
@@ -52,7 +57,11 @@
 
 			this._hourArrow.style.transform = `rotate(${rotateHourArrow}deg)`;
 			this._minuteArrow.style.transform = `rotate(${rotateMinuteArrow}deg)`;
-			this._secondArrow.style.transform = `rotate(${rotateSecondArrow}deg)`;
+
+			TweenLite.to(this._secondArrow, 0.3, { 
+				ease: Elastic.easeOut.config(1.2, 0.75),
+				rotation: rotateSecondArrow
+			});
 
 		}.bind(this), 1000);
 	};
