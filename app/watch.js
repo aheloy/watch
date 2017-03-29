@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 
 ;(function(){
 
@@ -28,11 +27,6 @@
 		this._hourArrow 	= createDiv(this._arrowsWrapper, 'watch__hour-arrow');
 		this._minuteArrow = createDiv(this._arrowsWrapper, 'watch__minute-arrow');
 		this._secondArrow = createDiv(this._arrowsWrapper, 'watch__second-arrow');
-
-		
-
-
-
 	};
 
 	Watch.prototype._createLabels = function() {
