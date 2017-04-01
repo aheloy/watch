@@ -12,6 +12,8 @@
     "babel-preset-env": "^1.2.1",
     "browser-sync": "^2.18.2",
     "del": "^2.2.2",
+    "eslint": "^3.18.0",
+    "eslint-plugin-react": "^6.10.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
@@ -20,6 +22,7 @@
     "gulp-concat-css": "^2.3.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglifyjs": "^0.6.2"
